@@ -14,20 +14,27 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.(woff|woff2|eot|ttf|otf)$/,
-      //   use: ['file-loader']
-      // },
-      // {
-      //   test: /\.(png|svg|jpg|gif)$/,
-      //   use: ['file-loader']
-      // }
+      {
+        test: /\.pug$/,
+        use: ['pug-loader']
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'images/'
+            }
+          }
+        ]
+      }
     ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/index.pug',
       filename: 'index.html'
     }),
   ],

@@ -37,12 +37,12 @@ module.exports = merge(common, {
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'images/'
-            }
-          },
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     outputPath: 'images/'
+          //   }
+          // },
           {
             loader: 'image-webpack-loader',
             options: {
