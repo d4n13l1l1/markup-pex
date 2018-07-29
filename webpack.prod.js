@@ -32,7 +32,21 @@ module.exports = merge(common, {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [MiniCssExtractPlugin.loader,'css-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader', // Run post css actions
+            options: {
+              plugins: function () { // post css plugins, can be exported to postcss.config.js
+                return [
+                  require('autoprefixer')
+                ];
+              }
+            }
+          },
+          'sass-loader'
+        ]
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,

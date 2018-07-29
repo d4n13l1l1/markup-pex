@@ -1,4 +1,4 @@
-import '../css/main.css';
+import '../css/main.scss';
 
 const el = document.querySelector('h1');
 
