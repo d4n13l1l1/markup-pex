@@ -1,5 +1,3 @@
-@import "component.css";
-
 body {
-  background-image: url('../img/img.jpg');
+  background-image: url('../public/img/img.jpg');
 }

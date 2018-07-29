@@ -37,12 +37,6 @@ module.exports = merge(common, {
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          // {
-          //   loader: 'file-loader',
-          //   options: {
-          //     outputPath: 'images/'
-          //   }
-          // },
           {
             loader: 'image-webpack-loader',
             options: {
@@ -69,15 +63,6 @@ module.exports = merge(common, {
           },
         ],
       },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            outputPath: 'assets/fonts'
-          }
-        }
-      }
     ]
   },
   plugins: [
