@@ -1,3 +1,5 @@
+include ./_mixins.pug
+
 doctype html
 html(lang='en')
   head
@@ -5,5 +7,59 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     title Document
-  body
-    h1 Hello
+  body.page
+    header.header
+      .container.header__wrapper
+        .header__logo
+        nav.header__nav
+          ul.header__list.list
+            - var navList = ['About', 'How It Works', 'Services', 'FAQ', 'Contact']
+            each item in navList 
+              li.header__item.item= item
+    main.main
+      section.section.section--first
+        .container.first__wrapper
+          .first__composition
+            h1.first__h1 Designs your eyeballs will thank you for 
+            button.btn.first__btn Get Started Today
+            small.first__small Lorem ipsum dolor sit amet, consectetur 
+      section.section.section--advantages
+        .container.advantages__wrapper
+          - var text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
+          - var listOfTitles = ['A fantastic heading', 'Good day blokes', 'Blaz Robar for president', 'vote for robar']
+          each title in listOfTitles
+            +advantage(title, text)
+      section.section.section--bang
+        .bang__conposition.container
+          h2.h2.bang__h2 Wicked & whack, bang bang boo!
+          p.text.bang__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          button.btn.btn--white.bang__btn Get Started Today
+      section.section.section--pen
+        +parts('hand', false)
+      section.section.section--experience
+        .experience__composition.container
+          h2.experience__h2 Experience the rush today
+          p.text.experience__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipisicing elit.
+          button.btn.experience__btn Get Started Today
+          small.experience__small Lorem ipsum dolor sit amet, consectetur
+      section.section.section--photography
+        .container
+          .photography__composition
+            button.btn.btn--transparent.photography__btn Photography
+            p.photography__text.text Lorem ipsum dolor sit amet consectetur adipisicing elit
+      section.section.section--hand
+        +parts('watch', true)
+      section.section.section--touch
+        .container
+          .touch__composition
+            h3.touch--h.h3 Get in touch
+            p.text.houch--text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            small.touch__mail help@yomuma.com
+    footer.footer
+      .container
+        p.text.footer__text psum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                
+            
+            
+          
+          
